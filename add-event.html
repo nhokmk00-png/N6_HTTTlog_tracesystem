@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm Sự Kiện Mới - TraceSystem</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="main-nav">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">TraceSystem</a>
+            <nav>
+                <a href="index.html" class="nav-link">Trang chủ</a>
+                <a href="products.html" class="nav-link active">Theo dõi sản phẩm</a> <a href="reports.html" class="nav-link">Báo cáo</a>
+                <a href="users.html" class="nav-link">Quản lý người dùng</a>
+            </nav>
+            <div class="user-profile-placeholder"></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="wizard-container">
+            <h1>Thêm Sự Kiện Mới</h1>
+            <div class="wizard-steps">
+                <div class="step-item active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Chọn sản phẩm</div>
+                </div>
+                <div class="step-item" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Thông tin sự kiện</div>
+                </div>
+                <div class="step-item" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Tài liệu</div>
+                </div>
+            </div>
+
+            <div class="wizard-content active" id="step1">
+                <div class="wizard-pane">
+                    <h2>Bước 1: Chọn Sản Phẩm</h2>
+                    <input type="text" id="productSearchInput" placeholder="Tìm kiếm theo mã sản phẩm hoặc tên sản phẩm...">
+                    <div class="product-selection-list" id="productSelectionList">
+                    </div>
+                    <div class="wizard-nav">
+                        <button class="btn-next" data-target="2">Tiếp theo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wizard-content" id="step2">
+                <div class="wizard-pane">
+                    <h2>Bước 2: Thông Tin Sự Kiện</h2>
+                    <div class="selected-product-info" id="selectedProductInfo">Sản phẩm được chọn: <strong></strong></div>
+                    <form class="event-form">
+                        <div class="form-group">
+                            <label for="eventType">Loại sự kiện *</label>
+                            <select id="eventType">
+                                <option disabled selected>-- Chọn loại sự kiện --</option>
+                                <option>Thu hoạch</option>
+                                <option>Sản xuất</option>
+                                <option>Kiểm định chất lượng</option>
+                                <option>Đóng gói</option>
+                                <option>Nhập kho</option>
+                                <option>Xuất kho</option>
+                                <option>Bắt đầu vận chuyển</option>
+                                <option>Giao hàng thành công</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="eventDate">Ngày *</label>
+                                <input type="date" id="eventDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="eventTime">Giờ *</label>
+                                <input type="time" id="eventTime">
+                            </div>
+                        </div>
+                        <div class="form-group location-group">
+                            <label for="eventLocation">Vị trí</label>
+                            <input type="text" id="eventLocation" placeholder="Nhập vị trí hoặc sử dụng GPS">
+                            <button type="button" class="btn-gps" id="gpsButton"><i class="fas fa-map-marker-alt"></i></button>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventNotes">Ghi chú</label>
+                            <textarea id="eventNotes" rows="3" placeholder="Nhập ghi chú về sự kiện..."></textarea>
+                        </div>
+                    </form>
+                    <div class="wizard-nav">
+                        <button class="btn-prev" data-target="1">Quay lại</button>
+                        <button class="btn-next" data-target="3">Tiếp theo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wizard-content" id="step3">
+                <div class="wizard-pane">
+                    <h2>Bước 3: Tài Liệu (Tùy chọn)</h2>
+                    <div class="upload-area" id="uploadArea">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Kéo thả file vào đây hoặc</p>
+                        <button type="button" class="btn-upload" id="uploadButton">Chọn file</button>
+                        <input type="file" id="fileInput" multiple hidden>
+                        <span>Hỗ trợ: PDF, DOC, JPG, PNG (Tối đa 10MB)</span>
+                    </div>
+                    <div id="fileList"></div>
+                    <div class="wizard-nav">
+                        <button class="btn-prev" data-target="2">Quay lại</button>
+                        <button class="btn-submit" id="submitEventButton">Thêm Sự Kiện</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="add-event.js"></script>
+</body>
+
+</html>

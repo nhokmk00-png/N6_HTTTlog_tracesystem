@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theo dõi sản phẩm - TraceSystem</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="content-page">
+    <header class="main-nav">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">TraceSystem</a>
+            <nav>
+                <a href="index.html" class="nav-link">Trang chủ</a>
+                <a href="products.html" class="nav-link active">Theo dõi sản phẩm</a>
+                <a href="reports.html" class="nav-link">Báo cáo</a>
+                <a href="users.html" class="nav-link">Quản lý người dùng</a>
+            </nav>
+            <div class="user-profile-placeholder"></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="header">
+            <h1>Theo Dõi Sản Phẩm</h1>
+            <p>Truy xuất nguồn gốc và theo dõi hành trình sản phẩm</p>
+        </div>
+
+        <main>
+            <section class="search-container">
+                <div class="search-bar">
+                    <input id="searchInput" type="text" placeholder="Nhập mã sản phẩm, tên sản phẩm hoặc barcode...">
+                    <button id="searchButton" class="btn-search"><i class="fas fa-search"></i> Tìm kiếm</button>
+                    <button id="qrButton" class="btn-qr"><i class="fas fa-qrcode"></i> Quét QR</button>
+                </div>
+                <div class="filters">
+                    <select id="categoryFilter">
+                        <option value="all">Tất cả danh mục</option>
+                        <option value="Nông sản">Nông sản</option>
+                        <option value="Dược phẩm">Dược phẩm</option>
+                        <option value="Điện tử">Điện tử</option>
+                    </select>
+                    <select id="statusFilter">
+                        <option value="all">Tất cả trạng thái</option>
+                        <option value="Đã giao hàng">Đã giao hàng</option>
+                        <option value="Đang vận chuyển">Đang vận chuyển</option>
+                        <option value="Đang sản xuất">Đang sản xuất</option>
+                    </select>
+                </div>
+            </section>
+
+            <section id="productGrid" class="product-grid"></section>
+        </main>
+    </div>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeModalButton">×</span>
+            <div class="modal-header">
+                <h2 id="modalProductName"></h2>
+            </div>
+            <div class="modal-scrollable-area">
+                <div class="modal-body">
+                    <div id="modalProductInfo" class="product-info-box"></div>
+                    <div id="modalTimeline" class="timeline"></div>
+                </div>
+                <div class="map-container">
+                    <iframe id="productMap" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

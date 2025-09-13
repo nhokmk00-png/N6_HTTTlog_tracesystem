@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo - TraceSystem</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="content-page">
+    <header class="main-nav">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">TraceSystem</a>
+            <nav>
+                <a href="index.html" class="nav-link">Trang chủ</a>
+                <a href="products.html" class="nav-link">Theo dõi sản phẩm</a>
+                <a href="reports.html" class="nav-link active">Báo cáo</a>
+                <a href="users.html" class="nav-link">Quản lý người dùng</a>
+            </nav>
+            <div class="user-profile-placeholder"></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="header">
+            <h1>Báo cáo & Thống kê</h1>
+            <p>Phân tích và xuất dữ liệu từ chuỗi cung ứng</p>
+        </div>
+
+        <main>
+            <section class="search-container">
+                <div class="report-filters">
+                    <div class="form-group">
+                        <label for="reportType">Loại báo cáo</label>
+                        <select id="reportType">
+                            <option>Báo cáo tổng hợp sản phẩm</option>
+                            <option>Báo cáo hiệu suất vận chuyển</option>
+                            <option>Báo cáo hoạt động người dùng</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateFrom">Từ ngày</label>
+                        <input type="date" id="dateFrom">
+                    </div>
+                    <div class="form-group">
+                        <label for="dateTo">Đến ngày</label>
+                        <input type="date" id="dateTo">
+                    </div>
+                    <div class="report-actions">
+                        <button class="btn-search"><i class="fas fa-filter"></i> Lọc</button>
+                        <button class="btn-export"><i class="fas fa-file-export"></i> Xuất báo cáo</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="report-summary">
+                <h2>Báo cáo tổng hợp sản phẩm (01/08/2025 - 31/08/2025)</h2>
+                <div class="stat-cards">
+                    <div class="stat-card">
+                        <div class="card-icon-wrapper blue"><i class="fas fa-plus-circle"></i></div>
+                        <div class="stat-info">
+                            <p>Sản phẩm mới</p>
+                            <h2>152</h2>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="card-icon-wrapper orange"><i class="fas fa-check-circle"></i></div>
+                        <div class="stat-info">
+                            <p>Giao hàng thành công</p>
+                            <h2>138</h2>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="card-icon-wrapper cyan"><i class="fas fa-truck"></i></div>
+                        <div class="stat-info">
+                            <p>Đang vận chuyển</p>
+                            <h2>14</h2>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="card-icon-wrapper red"><i class="fas fa-exclamation-triangle"></i></div>
+                        <div class="stat-info">
+                            <p>Sự cố</p>
+                            <h2>3</h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="table-wrapper">
+                <h3>Chi tiết</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã sản phẩm</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Ngày tạo</th>
+                            <th>Ngày hoàn tất</th>
+                            <th>Số sự kiện</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reportTableBody">
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="reports.js"></script>
+</body>
+
+</html>
