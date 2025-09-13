@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý người dùng - TraceSystem</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="content-page">
+
+    <header class="main-nav">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">TraceSystem</a>
+            <nav>
+                <a href="index.html" class="nav-link">Trang chủ</a>
+                <a href="products.html" class="nav-link">Theo dõi sản phẩm</a>
+                <a href="reports.html" class="nav-link">Báo cáo</a>
+                <a href="users.html" class="nav-link active">Quản lý người dùng</a>
+            </nav>
+            <div class="user-profile-placeholder"></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="header">
+            <h1>Quản Lý Người Dùng</h1>
+            <p>Thêm, sửa, và quản lý các tài khoản trong hệ thống</p>
+        </div>
+
+        <main>
+            <section class="search-container">
+                <div class="user-actions">
+                    <input id="userSearchInput" type="text" placeholder="Tìm kiếm theo tên, email hoặc công ty...">
+                    <select id="roleFilter">
+                        <option value="all">Tất cả vai trò</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Manager">Manager</option>
+                        <option value="User">User</option>
+                    </select>
+                    <a href="edit-user.html" class="btn-add-user"><i class="fas fa-plus"></i> Thêm người dùng</a>
+                </div>
+            </section>
+
+            <section class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Người dùng</th>
+                            <th>Công ty</th>
+                            <th>Vai trò</th>
+                            <th>Trạng thái</th>
+                            <th>Blockchain</th>
+                            <th style="text-align: center;">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTableBody">
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <div id="userModal" class="modal">
+        <div class="modal-content user-modal-content">
+            <span class="close-button" id="closeUserModalButton">×</span>
+            <div class="modal-header">
+                <h2 id="modalUserName"></h2>
+            </div>
+            <div id="modalUserInfo" class="user-modal-body">
+            </div>
+        </div>
+    </div>
+
+    <script src="users.js"></script>
+</body>
+
+</html>

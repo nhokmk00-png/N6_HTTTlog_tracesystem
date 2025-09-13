@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chỉnh Sửa Người Dùng - TraceSystem</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="main-nav">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">TraceSystem</a>
+            <nav>
+                <a href="index.html" class="nav-link">Trang chủ</a>
+                <a href="products.html" class="nav-link">Theo dõi sản phẩm</a>
+                <a href="reports.html" class="nav-link">Báo cáo</a>
+                <a href="users.html" class="nav-link active">Quản lý người dùng</a> </nav>
+            <div class="user-profile-placeholder"></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="edit-user-container">
+            <a href="users.html" class="back-link"><i class="fas fa-arrow-left"></i> Quay lại danh sách</a>
+            <h1>Chỉnh Sửa Người Dùng</h1>
+
+            <form class="edit-user-form">
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <i class="fas fa-user-shield"></i>
+                        <h3>Thông Tin Cá Nhân</h3>
+                    </div>
+                    <div class="form-group">
+                        <label for="fullName">Họ và tên *</label>
+                        <input type="text" id="fullName" value="Nguyễn Văn An">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" value="an.nguyen@techcorp.vn">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại</label>
+                        <input type="tel" id="phone" value="0901234567">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <i class="fas fa-building"></i>
+                        <h3>Thông Tin Công Ty</h3>
+                    </div>
+                    <div class="form-group">
+                        <label for="companyName">Tên công ty</label>
+                        <input type="text" id="companyName" value="Tech Corporation">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Địa chỉ</label>
+                        <input type="text" id="address" value="Quận 1, TP.HCM">
+                    </div>
+                </div>
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <i class="fas fa-user-cog"></i>
+                        <h3>Phân Quyền</h3>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Vai trò</label>
+                        <select id="role">
+                            <option value="Admin" selected>Admin</option>
+                            <option value="Manager">Manager</option>
+                            <option value="User">User</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <i class="fas fa-link"></i>
+                        <h3>Kết nối Blockchain</h3>
+                    </div>
+                    <div class="form-group">
+                        <label for="blockchainId">Địa chỉ ví Blockchain</label>
+                        <input type="text" id="blockchainId" value="0x1234567890abcdef1234567890abcdef12345678" disabled>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel">Hủy</button>
+                    <button type="submit" class="btn-submit">Lưu thay đổi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="edit-user.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TraceSystem</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="dashboard-page">
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="nav-logo">TraceSystem</a>
+            </div>
+            <div class="sidebar-section">
+                <h3>Thao tác nhanh</h3>
+                <div class="quick-actions">
+                    <a href="add-event.html" class="action-button"><i class="fas fa-plus"></i> Thêm sự kiện</a>
+                    <a href="#" class="action-button"><i class="fas fa-qrcode"></i> Quét QR</a>
+                    <a href="reports.html" class="action-button"><i class="fas fa-file-alt"></i> Tạo báo cáo</a>
+                </div>
+            </div>
+            <div class="sidebar-section notifications">
+                <h3>Thông báo gần đây</h3>
+                <div class="notification-list">
+                    <div class="notification-item">
+                        <div class="notif-icon info"><i class="fas fa-box"></i></div>
+                        <div class="notif-content">
+                            <p>Sản phẩm <strong>LP-ULTRA-X1</strong> vừa được cập nhật.</p>
+                            <span>5 phút trước</span>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notif-icon warn"><i class="fas fa-user-plus"></i></div>
+                        <div class="notif-content">
+                            <p>Người dùng mới <strong>Tô Ngọc Hà</strong> đang chờ duyệt.</p>
+                            <span>1 giờ trước</span>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notif-icon danger"><i class="fas fa-exclamation-triangle"></i></div>
+                        <div class="notif-content">
+                            <p>Lô hàng <strong>CF-RB-07</strong> bị trễ 2 giờ.</p>
+                            <span>3 giờ trước</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-nav">
+                <div class="container nav-container">
+                    <nav>
+                        <a href="index.html" class="nav-link active">Trang chủ</a>
+                        <a href="products.html" class="nav-link">Theo dõi sản phẩm</a>
+                        <a href="reports.html" class="nav-link">Báo cáo</a>
+                        <a href="users.html" class="nav-link">Quản lý người dùng</a>
+                    </nav>
+                    <div class="user-profile">
+                        <span>NA</span>
+                        <div class="user-info">
+                            <strong>Nguyễn Văn A</strong>
+                            <a href="#">Đăng xuất</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body">
+                <div class="dashboard-header">
+                    <h1>Chào mừng trở lại, Nguyễn Văn A!</h1>
+                    <p>Đây là tổng quan hệ thống của bạn hôm nay.</p>
+                </div>
+
+                <section class="stat-cards">
+                    <div class="stat-card">
+                        <div class="card-icon-wrapper blue"><i class="fas fa-box-open"></i></div>
+                        <div class="stat-info">
+                            <p>Tổng sản phẩm</p>
+                            <h2>1,247</h2>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="card-icon-wrapper orange"><i class="fas fa-exchange-alt"></i></div>
+                        <div class="stat-info">
+                            <p>Giao dịch</p>
+                            <h2>856</h2>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="card-icon-wrapper cyan"><i class="fas fa-users"></i></div>
+                        <div class="stat-info">
+                            <p>Người dùng</p>
+                            <h2>142</h2>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="card-icon-wrapper red"><i class="fas fa-exclamation-triangle"></i></div>
+                        <div class="stat-info">
+                            <p>Cảnh báo</p>
+                            <h2>12</h2>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="activity-section">
+                    <div class="chart-container">
+                        <h3>Xu hướng giao dịch (7 ngày qua)</h3>
+                        <canvas id="activityChart"></canvas>
+                    </div>
+                    <div class="recent-activity">
+                        <h3>Hoạt động gần đây</h3>
+                        <table class="activity-table">
+                            <thead>
+                                <tr>
+                                    <th>Sản phẩm</th>
+                                    <th>Sự kiện</th>
+                                    <th>Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody id="activityTableBody"></tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
